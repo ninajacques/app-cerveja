@@ -12,6 +12,15 @@ import { MapComponent } from './pages/map/map.component';
 import { CreateSaleComponent } from './pages/create-sale/create-sale.component';
 import { SaleListComponent } from './components/sale-list/sale-list.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +35,12 @@ import { SaleListComponent } from './components/sale-list/sale-list.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms'; 
+import { BeersaleService } from '../../beersale.service';
 
 @Component({
   selector: 'app-create-sale',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-sale.component.scss']
 })
 export class CreateSaleComponent implements OnInit {
-
-  constructor() { }
+  name: FormControl;
+  constructor(private beersaleService: BeersaleService) { 
+    this.name = new FormControl("", Validators.required);
+  }
 
   ngOnInit(): void {
   }
-
+  CreateRecord(){
+    let record = {};
+    record['Name'] = this.name.value;
+    this.beersaleService.create_NewUser(record).then(resp => {
+      // this.name.setValue("");
+      console.log(resp);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  }
 }
