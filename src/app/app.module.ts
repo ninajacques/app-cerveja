@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './pages/main/main.component';
 import { LoginComponent } from './pages/login/login.component';
-import { MasterComponent } from './pages/master/master.component';
+import { InternalComponent } from './pages/internal/internal.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MapComponent } from './pages/map/map.component';
@@ -19,6 +19,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { CreateUserComponent } from './pages/create-user/create-user.component';
 
 
 @NgModule({
@@ -26,12 +27,13 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
     AppComponent,
     MainComponent,
     LoginComponent,
-    MasterComponent,
+    InternalComponent,
     HeaderComponent,
     FooterComponent,
     MapComponent,
     CreateSaleComponent,
-    SaleListComponent
+    SaleListComponent,
+    CreateUserComponent
   ],
   imports: [
     BrowserModule,
