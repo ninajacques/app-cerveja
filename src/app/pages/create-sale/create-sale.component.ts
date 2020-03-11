@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms'; 
-import { BeersaleService } from '../../beersale.service';
+import { BeersaleService } from '../../services/beersale/beersale.service';
 
 @Component({
   selector: 'app-create-sale',
